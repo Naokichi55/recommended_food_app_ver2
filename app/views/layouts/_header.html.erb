@@ -1,5 +1,7 @@
 <% if user_signed_in? %>
 <%#ログイン時%>
+  <%= link_to "一覧ページへ", root_path %>
+  <%= link_to "新規投稿ページ", new_food_path%>
   <%= link_to "アカウント編集", edit_user_registration_path %>
   <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "ログアウトしますか？" } %>
   <%= "【ログイン中のアドレス】#{current_user.email}" %>
