@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    molels:
+      food: 料理
+    attributes:
+      food:
+        name: 料理名
+        comment: コメント
+
+time:
+  formtas:
+    defaoult: "%Y年%-m月%-d日(%a) %-H時%-M分%-S秒"
