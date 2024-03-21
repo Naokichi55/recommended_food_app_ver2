@@ -1,0 +1,10 @@
+<div id="error-messages">
+  <% binding.pry %>
+  <% if object.error.any? %>
+    <ul>
+      <% object.errors.full_messages.each do |msg| %>
+        <li><span style="color: :red"><%= msg %></span></li>
+      <% end %>
+    </ul>
+  <%end%>
+</div>

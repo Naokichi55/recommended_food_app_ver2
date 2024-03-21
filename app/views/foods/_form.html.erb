@@ -1,3 +1,5 @@
+<% preview_target_class = "js__preview-target-#{SecureRandom.uuid}" %>
+
 <%= form_with model: @food do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name, 
@@ -12,6 +14,12 @@
   <%= form.text_area :comment,
                       placeholder: "料理に関するコメントを入力してください。"
   %>
+  <p>
+    <%= form.file_field :avatar, accept: "image/png,image/jpeg,image/gif", class: "js__preview-input", data: { preview_target: ".#{preview_target_class}" } %>
+  </p>
+  <p>
+    <%= image_tag "", alt: "画像のプレビュー", height: 200, class: preview_target_class, hidden: true %>
+  </p>
   <br>
   <%= form.submit "送信" %>
 <% end %>
