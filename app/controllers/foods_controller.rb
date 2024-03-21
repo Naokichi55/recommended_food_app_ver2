@@ -17,12 +17,20 @@ class FoodsController < ApplicationController
 
   def create
     food = current_user.foods.create!(food_params)
-    redirect_to food, notice: "料理情報を入力しました。"
+    if food.save
+      redirect_to food, notice: "料理情報を入力しました。"
+    else
+      render :error_handling, status: :unprocessable_entity
+    end
   end
 
   def update
     @food.update!(food_params)
-    redirect_to @food
+    if @food.update!(food_params)
+      redirect_to @food
+    else
+      render :error_handling, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -33,7 +41,7 @@ class FoodsController < ApplicationController
   private
 
   def food_params
-    params.require(:food).permit(:name, :comment)
+    params.require(:food).permit(:name, :comment, :avatar)
   end
 
   def set_food

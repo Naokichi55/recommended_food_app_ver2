@@ -6,6 +6,7 @@ ja:
       food:
         name: 料理名
         comment: コメント
+        avatara: 画像
 
 time:
   formtas:

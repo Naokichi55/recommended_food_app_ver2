@@ -32,6 +32,14 @@ Style/FrozenStringLiteralComment:
 Layout/LineLength:
   Max: 160
 
+# メソッドの複雑さについて
+Metrics/AbcSize:
+  Max: 30
+
+# メソッドの長さについて
+Mertics/MethodLength:
+  Max: 35
+
 # （お好みで設定）文字列はダブルクォートに統一
 Style/StringLiterals:
   EnforcedStyle: double_quotes
